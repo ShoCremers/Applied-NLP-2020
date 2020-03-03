@@ -27,7 +27,18 @@ def has_number(sentence):
     for token in sentence:
         if token.pos_ == 'NUM':
             return True
+    return False
 
+def has_determiner(sentence):
+    for token in sentence:
+        if token.pos_ == 'DET':
+            return True
+    return False
+
+def has_determiner(sentence):
+    for token in sentence:
+        if token.pos_ == 'PRON':
+            return True
     return False
 
 
@@ -38,9 +49,13 @@ if __name__ == '__main__':
     sentence1 = "People Don't Know Who David Bowie Is And We're Here To Clear That Up"
     sentence2 = "24 Times Ruby Rose And Phoebe Dahl Defined Relationship Goals In 2015"
     sentence3 = "G.M. Lowers 2009 Outlook for All U.S. Auto Sales"
-    doc = nlp(sentence0)
-    print(doc)
-    print(number_of_words(doc))
-    print(avg_length_of_word(doc))
-    print(stopword_percentage(doc))
-    print(has_number(doc))
+    sentence4 = "Your dog is not listening to me"
+    doc = nlp(sentence4)
+    #print(doc)
+    #print(number_of_words(doc))
+    #print(avg_length_of_word(doc))
+    #print(stopword_percentage(doc))
+    #print(has_number(doc))
+    #print(has_determiner(doc))
+    for token in doc:
+        print(token.text, token.pos_)
