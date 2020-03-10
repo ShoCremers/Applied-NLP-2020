@@ -62,7 +62,7 @@ def sentiment_score(sentence):
             'outputFormat': 'json',
             'timeout': 1000,
         })
-    return result
+    return result["sentences"][0]["sentimentValue"]
 
 
 if __name__ == '__main__':
@@ -76,14 +76,15 @@ if __name__ == '__main__':
     sentence4 = "Your dog is not listening to me"
 
     doc = nlp(sentence4)
-    results = sentiment_score(sentence0)
+    # results = sentiment_score(sentence0)
 
-    for sentence in results["sentences"]:
-        print("{}: {}".format(
-            " ".join([t["word"] for t in sentence["tokens"]]),
-            sentence["sentimentValue"]
-            )
-        )
+    print(sentiment_score(sentence0))
+    # for sentence in results["sentences"]:
+    #     print("{}: {}".format(
+    #         " ".join([t["word"] for t in sentence["tokens"]]),
+    #         sentence["sentimentValue"]
+    #         )
+    #     )
     #print(doc)
     #print(number_of_words(doc))
     #print(avg_length_of_word(doc))

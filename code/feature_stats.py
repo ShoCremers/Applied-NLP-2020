@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
 
     columns = ['Headlines', '#words','word length', 'stopword%', 'has number', 'has determiner', 'has pronoun',
-               'has comparative', 'has superlative', 'has sup or comp']
+               'has comparative', 'has superlative', 'has sup or comp', 'sentiment value']
 
     # statistics for clickbait data
     df_cb_features = pd.DataFrame(index=range(tot_headlines_cb), columns=columns)
@@ -61,6 +61,7 @@ if __name__ == '__main__':
         df_cb_features["has comparative"][index] = int(features.has_comparative(doc))
         df_cb_features["has superlative"][index] = int(features.has_superlative(doc))
         df_cb_features["has sup or comp"][index] = int(features.has_comparative(doc) or features.has_superlative(doc))
+        df_cb_features["sentiment value"][index] = features.sentiment_score(sentence)
 
         superlative_cb += int(features.has_superlative(doc))
         comparative_cb += int(features.has_comparative(doc))
