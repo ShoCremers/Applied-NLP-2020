@@ -35,7 +35,7 @@ def has_determiner(sentence):
             return True
     return False
 
-def has_determiner(sentence):
+def has_pronoun(sentence):
     for token in sentence:
         if token.pos_ == 'PRON':
             return True
