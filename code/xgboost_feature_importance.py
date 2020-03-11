@@ -20,7 +20,7 @@ features = loaded_data.iloc[:, 2:]
 
 data_matrix = xgb.DMatrix(features, label)
 
-params = {'objective':'binary:logistic'} #params need to be explicity stated, but contain the default parameter values
+params = {'objective':'binary:logistic'} #params need to be explicity stated, binary:logistic chosen since that is default in API settings
 
 trained = xgb.train(params, data_matrix)
 #xgb.plot_importance(trained)
