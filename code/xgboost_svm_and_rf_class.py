@@ -16,7 +16,7 @@ loaded_data = pd.read_csv("./Classification_and_Importance/features.csv")
 
 col = 'class'
 conditions = [loaded_data[col] == 1, loaded_data[col] == -1]
-choices = ["1", "0"]
+choices = ["1", "0"] #changing labels to 1 and 0 since that is required
 
 loaded_data['class'] = np.select(conditions, choices, default=np.nan)
 loaded_data['class'] = pd.to_numeric(loaded_data['class'])
