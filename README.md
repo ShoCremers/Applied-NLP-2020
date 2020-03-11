@@ -1,4 +1,6 @@
-# Applied-NLP-2020
+# Think This a Normal Research Paper? Wait Till You See What’s Inside! -- Feature Selection For Clickbait Detection
+
+### Group 22: Cremers, Kaur, Koesomo
 
 This repository consists of the data used and the code used for the Applied NLP project of the Information Retrieval (IN4325) course at TU Delft. The purpose of this study was to determine which features are useful in predicting clickbait headlines.
 
